@@ -9,8 +9,7 @@ class Valoracion extends EntidadBase{
 	
     public function __construct() {
         $table="valoracion";
-        $primarykey="valoracionId";
-        parent::__construct($table,$primarykey);
+        parent::__construct($table);
     }
     
     public function getId() {

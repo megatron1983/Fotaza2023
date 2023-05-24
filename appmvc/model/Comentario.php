@@ -9,7 +9,6 @@ class Comentario extends EntidadBase{
     
     public function __construct() {
         $table="comentario";
-        $primarykey="comentarioId";
         parent::__construct($table);
     }
     

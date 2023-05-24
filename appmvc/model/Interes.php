@@ -6,7 +6,6 @@ class Interes extends EntidadBase{
 	
     public function __construct() {
         $table="interes";
-        $primarykey="interesId";
         parent::__construct($table);
     }
     

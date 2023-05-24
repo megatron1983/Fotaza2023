@@ -1,23 +1,20 @@
 <?php
 class Licencia extends EntidadBase{
-    private int $licenciaId;
-    private int $usuarioId;
-    private int $categoriaId;
-
-   private string $tipo;
+    private int $id;
+    private string $tipo;
+    
 	
     public function __construct() {
         $table="licencia";
-        $primarykey="licenciaId";
-        parent::__construct($table,$primarykey);
+        parent::__construct($table);
     }
     
     public function getId() {
-        return $this->licenciaId;
+        return $this->id;
     }
 
     public function setId($id) {
-        $this->licenciaId = $id;
+        $this->id = $id;
     }
     
     public function getTipo() {
@@ -31,8 +28,7 @@ class Licencia extends EntidadBase{
     public function alta(){
         $query="INSERT INTO interes (licenciaId,usuarioId,categoriaId,tipo)
                 VALUES(NULL,
-                       '".$this->usuarioId."',
-                       '".$this->categoriaId."'
+                       '".$this->id."',
                        '".$this->tipo."');";
         $save=$this->db()->query($query);
         //$this->db()->error;
@@ -40,7 +36,7 @@ class Licencia extends EntidadBase{
     }
     
     public function modificar(){
-        $query= "UPDATE interes set nombre = '$this->nombre'  where licenciaId = $this->licenciaId";//que va en $this->nombre
+        $query= "UPDATE licencia set tipo = '$this->tipo'  where licenciaId = $this->tipo";//que va en $this->nombre
         
         $save=$this->db()->query($query);
         //$this->db()->error;
@@ -49,7 +45,7 @@ class Licencia extends EntidadBase{
     }
     
     public function eliminar(){
-        $query= "DELETE interes  where id = $this->licenciaId";
+        $query= "DELETE interes  where id = $this->id";
         
         $save=$this->db()->query($query);
         //$this->db()->error;

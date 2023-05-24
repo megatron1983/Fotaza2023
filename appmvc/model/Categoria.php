@@ -5,7 +5,6 @@ class Categoria extends EntidadBase{
     
     public function __construct() {
         $table="categoria";
-        $primarykey="categoriaId";
         parent::__construct($table);
     }
     

@@ -11,7 +11,7 @@ class Usuario extends EntidadBase{
     public function __construct() {
         $table="usuario";
         $primarykey="usuarioId";
-        parent::__construct($table,$primarykey);
+        parent::__construct($table);
     }
     
     public function getId() {
@@ -129,7 +129,7 @@ class Usuario extends EntidadBase{
     
     public function verificarUsuario($email){
         $consulta= "SELECT * from usuario where email= '$email' ";
-      $result = $this->db()->query($consulta); //or die('Fallo'.$this->db()->error);
+      $result = $this->db()->query($consulta); 
         if($result->num_rows==1){
             
             return 1;
