@@ -1,17 +1,17 @@
 <?php
 class Usuario extends EntidadBase{
     private int $usuarioId;
-    private string $contrasena;
-    private string $apellido;
     private string $nombre;
-    private string $email;
+    private string $apellido;
     private string $sexo;
-	private $foto;
+    private string $foto;
+    private string $email;
+    private string $contrasena;
     
     public function __construct() {
         $table="usuario";
-        $primarykey="usuarioId";
-        parent::__construct($table);
+        $primarykey="id";
+        parent::__construct($table, $primarykey);
     }
     
     public function getId() {
